@@ -3,10 +3,10 @@ package com.cezklosowski.entities;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -14,10 +14,14 @@ import java.time.LocalDate;
 public class LoanEntity {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long loanId;
 
-    private String deviceName;
+    @OneToMany(
+            mappedBy = "ultrasoundMachineId"
+    )
+    private Set<UltrasoundMachineEntity> ultrasoundMachines = new HashSet<>();
+
     private String placeName;
     private LocalDate startTime;
     private LocalDate endTime;
