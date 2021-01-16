@@ -58,5 +58,18 @@ public class FrontendController {
         model.addAttribute("ultrasoundMachines", allUltrasoundMachines);
         return "ultrasoundMachines";
     }
+
+    @GetMapping("/addUltrasoundMachine")
+    public String addUltrasoundMachine(Model model) {
+        model.addAttribute("ultrasoundMachineDTO", new UltrasoundMachineDTO());
+        return "addUltrasoundMachine";
+    }
+
+    @PostMapping("/addUltrasoundMachine")
+    public String postAddUltrasoundMachine(Model model, UltrasoundMachineDTO ultrasoundMachineDTO) {
+        log.info("Dodatno nowy aparat USG: " + ultrasoundMachineDTO);
+        ultrasoundMachinesService.addNewUltrasoundMachine(ultrasoundMachineDTO);
+        return "redirect:/";
+    }
 }
 

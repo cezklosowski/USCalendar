@@ -31,4 +31,9 @@ public class UltrasoundMachineService {
         return dtosList;
     }
 
+    public void addNewUltrasoundMachine(UltrasoundMachineDTO dto) {
+        final UltrasoundMachineEntity entity = UltrasoundMachineMapper.toEntity(dto);
+        ultrasoundMachineRepository.save(entity);
+    }
+
 }

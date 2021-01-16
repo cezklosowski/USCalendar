@@ -17,4 +17,16 @@ public class UltrasoundMachineMapper {
 
         return dto;
     }
+
+    public static UltrasoundMachineEntity toEntity(UltrasoundMachineDTO dto) {
+        final UltrasoundMachineEntity entity = new UltrasoundMachineEntity();
+
+        entity.setUltrasoundMachineId(dto.getUltrasoundMachineId());
+        entity.setSerialNumber(dto.getSerialNumber());
+        entity.setModelName(dto.getModelName());
+        entity.setManufacturerName(dto.getManufacturerName());
+        entity.setProductionDate(dto.getProductionDate());
+
+        return entity;
+    }
 }

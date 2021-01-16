@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>US Calendar</title>
+</head>
+<body>
+<h1>Dodaj nowy aparat USG:</h1>
+
+<form method="post" th:action="@{/addUltrasoundMachine}" th:object="${ultrasoundMachineDTO}">
+    <div>
+        <label for="manufacturerNameInput">Producent:</label>
+        <input id="manufacturerNameInput" type="text" th:field="*{manufacturerName}">
+    </div>
+    <div>
+            <label for="modelNameInput">Model:</label>
+            <input id="modelNameInput" type="text" th:field="*{modelName}">
+    </div>
+    <div>
+            <label for="serialNumberInput">Numer seryjny:</label>
+            <input id="serialNumberInput" type="text" th:field="*{serialNumber}">
+    </div>
+    <div>
+            <label for="productionDateInput">Data produkcji:</label>
+            <input id="productionDateInput" type="date" th:field="*{productionDate}">
+    </div>
+
+    <div>
+        <button type="submit">Dodaj!</button>
+    </div>
+</form>
+</body>
+</html>
