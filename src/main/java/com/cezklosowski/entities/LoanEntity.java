@@ -18,7 +18,7 @@ public class LoanEntity {
     private long loanId;
 
     @OneToMany(
-            mappedBy = "ultrasoundMachineId"
+           // mappedBy = "loanEntity"
     )
     private Set<UltrasoundMachineEntity> ultrasoundMachines = new HashSet<>();
 

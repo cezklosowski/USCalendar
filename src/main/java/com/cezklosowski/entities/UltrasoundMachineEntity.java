@@ -20,6 +20,7 @@ public class UltrasoundMachineEntity {
     private String manufacturerName;
     private LocalDate productionDate;
 
+
     // private List<Probe> probes;
     // private List<Accessories> accessories;
 

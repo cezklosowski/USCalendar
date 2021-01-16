@@ -110,6 +110,7 @@ public class DemoData {
         loanRepository.saveAndFlush(loanEntity2);
 
         loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity3);
+        loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity4);
         loanEntity3.setPlaceName("LuxMed Kraków");
         loanEntity3.setStartTime(LocalDate.of(2021,2,3));
         loanEntity3.setEndTime(LocalDate.of(2021,2,9));
