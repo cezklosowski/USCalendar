@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>US Calendar</title>
+</head>
+<body>
+<h1>Dodaj nowe wypożyczenie:</h1>
+
+<form method="post" th:action="@{/addLoan}" th:object="${loanDTO}">
+    <div>
+        <label for="placeNameInput">Miejsce wypożyczenia:</label>
+        <input id="placeNameInput" type="text" th:field="*{placeName}">
+    </div>
+
+    <div>
+        <label for="startTimeInput">Od:</label>
+        <input id="startTimeInput" type="datetime-local" th:field="*{startTime}">
+    </div>
+    <div>
+        <label for="endTimeInput">Do:</label>
+        <input id="endTimeInput" type="datetime-local" th:field="*{endTime}">
+    </div>
+
+    <div>
+        <button type="submit">Dodaj!</button>
+    </div>
+</form>
+</body>
+</html>

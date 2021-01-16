@@ -2,12 +2,9 @@ package com.cezklosowski.dtos;
 
 import com.cezklosowski.entities.UltrasoundMachineEntity;
 import lombok.Data;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +13,7 @@ public class LoanDTO {
 
     private long loanId;
     private String placeName;
-    private LocalDate startTime;
-    private LocalDate endTime;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private Set<UltrasoundMachineEntity> ultrasoundMachines = new HashSet<>();
 }

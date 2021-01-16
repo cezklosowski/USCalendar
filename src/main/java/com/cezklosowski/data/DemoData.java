@@ -10,6 +10,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Component
 public class DemoData {
@@ -99,21 +100,21 @@ public class DemoData {
 
         loanEntity1.getUltrasoundMachines().add(ultrasoundMachineEntity1);
         loanEntity1.setPlaceName("EnelMed Gdańsk");
-        loanEntity1.setStartTime(LocalDate.of(2021,1,19));
-        loanEntity1.setEndTime(LocalDate.of(2021,1,24));
+        loanEntity1.setStartTime(LocalDateTime.of(2021,1,19,13,0));
+        loanEntity1.setEndTime(LocalDateTime.of(2021,1,24,12,30));
         loanRepository.saveAndFlush(loanEntity1);
 
         loanEntity2.getUltrasoundMachines().add(ultrasoundMachineEntity3);
         loanEntity2.setPlaceName("Eskulap Warszawa");
-        loanEntity2.setStartTime(LocalDate.of(2021,1,20));
-        loanEntity2.setEndTime(LocalDate.of(2021,1,26));
+        loanEntity2.setStartTime(LocalDateTime.of(2021,1,21,7,15));
+        loanEntity2.setEndTime(LocalDateTime.of(2021,1,28,10,30));
         loanRepository.saveAndFlush(loanEntity2);
 
         loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity5);
         loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity9);
         loanEntity3.setPlaceName("LuxMed Kraków");
-        loanEntity3.setStartTime(LocalDate.of(2021,2,3));
-        loanEntity3.setEndTime(LocalDate.of(2021,2,9));
+        loanEntity3.setStartTime(LocalDateTime.of(2021,2,1,12,0));
+        loanEntity3.setEndTime(LocalDateTime.of(2021,2,7,8,0));
         loanRepository.saveAndFlush(loanEntity3);
 
     }

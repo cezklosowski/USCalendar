@@ -28,5 +28,10 @@ public class LoanService {
         return dtosList;
     }
 
+    public void addNewLoan(LoanDTO dto) {
+        final LoanEntity entity = LoanMapper.toEntity(dto);
+        loanRepository.save(entity);
+    }
+
 }
 

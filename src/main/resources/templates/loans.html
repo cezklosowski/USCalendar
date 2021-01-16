@@ -11,14 +11,15 @@
         <h3 th:text="${loan.placeName}"></h3>
         <div>
         <span>
-        Wypożyczenie od <b th:text="${loan.startTime}"></b> do <b
-                th:text="${loan.endTime}"></b>.
+        Wypożyczenie od <b th:text="${loan.startTime}"></b> do
+            <b th:text="${loan.endTime}"></b>.
         </span>
             <br/>
         </div>
         <div>
         <span>Aparat:
             <div th:each="ultrasoundMachine : ${loan.ultrasoundMachines}">
+                <span th:text="${ultrasoundMachine.manufacturerName}"></span>
                 <b th:text="${ultrasoundMachine.modelName}"></b>
             </div>
         </span>

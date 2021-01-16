@@ -16,4 +16,16 @@ public class LoanMapper {
 
         return dto;
     }
+
+    public static LoanEntity toEntity(LoanDTO dto) {
+        final LoanEntity entity = new LoanEntity();
+
+        entity.setLoanId(dto.getLoanId());
+        entity.setPlaceName(dto.getPlaceName());
+        entity.setStartTime(dto.getStartTime());
+        entity.setEndTime(dto.getEndTime());
+        entity.setUltrasoundMachines(dto.getUltrasoundMachines());
+
+        return entity;
+    }
 }
