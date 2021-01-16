@@ -1,15 +1,20 @@
 package com.cezklosowski.thymeleafControllers;
 
 import com.cezklosowski.dtos.LoanDTO;
+import com.cezklosowski.dtos.UltrasoundMachineDTO;
 import com.cezklosowski.services.HelloService;
 import com.cezklosowski.services.LoanService;
+import com.cezklosowski.services.UltrasoundMachineService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -18,6 +23,7 @@ import java.util.List;
 public class FrontendController {
     private final HelloService helloService;
     private final LoanService loanService;
+    private final UltrasoundMachineService ultrasoundMachinesService;
 
 
     @GetMapping("/")
@@ -27,7 +33,7 @@ public class FrontendController {
     }
 
     @GetMapping("/loans")
-    public String jobOffers(Model model) {
+    public String loans(Model model) {
         final List<LoanDTO> allLoans = loanService.getAllLoans();
         model.addAttribute("loans", allLoans);
         return "loans";
@@ -44,6 +50,13 @@ public class FrontendController {
         log.info("Dodatno nowe wypożyczenie: " + loanDTO);
         loanService.addNewLoan(loanDTO);
         return "redirect:/";
+    }
+
+    @GetMapping("/ultrasoundMachines")
+    public String ultrasoundMachines(Model model) {
+        final List<UltrasoundMachineDTO> allUltrasoundMachines = ultrasoundMachinesService.getAllUltrasoundMachines();
+        model.addAttribute("ultrasoundMachines", allUltrasoundMachines);
+        return "ultrasoundMachines";
     }
 }
 

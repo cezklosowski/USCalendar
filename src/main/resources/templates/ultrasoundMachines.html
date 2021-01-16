@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>US Calendar</title>
+</head>
+<body>
+<h1>Aparaty USG:</h1>
+<div th:each="ultrasoundMachine : ${ultrasoundMachines}">
+    <div>
+        <h3>
+            <b th:text="${ultrasoundMachine.manufacturerName}"></b>
+             <b th:text="${ultrasoundMachine.modelName}"></b>
+        </h3>
+        <span>
+            Numer seryjny: <b th:text="${ultrasoundMachine.serialNumber}"></b> </br>
+        </span>
+        <span>
+            Data produkcji: <b th:text="${ultrasoundMachine.productionDate}"></b> </br>
+        </span>
+    </div>
+</div>
+</body>
+</html>
