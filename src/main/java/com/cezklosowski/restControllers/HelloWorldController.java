@@ -1,4 +1,4 @@
-package com.cezklosowski.controllers;
+package com.cezklosowski.restControllers;
 
 import com.cezklosowski.services.HelloService;
 import lombok.RequiredArgsConstructor;

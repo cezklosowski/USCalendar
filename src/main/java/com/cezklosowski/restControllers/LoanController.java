@@ -1,7 +1,6 @@
-package com.cezklosowski.controllers;
+package com.cezklosowski.restControllers;
 
 import com.cezklosowski.dtos.LoanDTO;
-import com.cezklosowski.entities.LoanEntity;
 import com.cezklosowski.services.LoanService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
