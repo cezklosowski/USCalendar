@@ -1,9 +1,12 @@
 package com.cezklosowski.thymeleafControllers;
 
 import com.cezklosowski.dtos.LoanDTO;
+import com.cezklosowski.dtos.ProbeDTO;
 import com.cezklosowski.dtos.UltrasoundMachineDTO;
+import com.cezklosowski.enums.ProbeType;
 import com.cezklosowski.services.HelloService;
 import com.cezklosowski.services.LoanService;
+import com.cezklosowski.services.ProbeService;
 import com.cezklosowski.services.UltrasoundMachineService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -24,6 +27,7 @@ public class FrontendController {
     private final HelloService helloService;
     private final LoanService loanService;
     private final UltrasoundMachineService ultrasoundMachinesService;
+    private final ProbeService probeService;
 
 
     @GetMapping("/")
@@ -69,6 +73,26 @@ public class FrontendController {
     public String postAddUltrasoundMachine(Model model, UltrasoundMachineDTO ultrasoundMachineDTO) {
         log.info("Dodatno nowy aparat USG: " + ultrasoundMachineDTO);
         ultrasoundMachinesService.addNewUltrasoundMachine(ultrasoundMachineDTO);
+        return "redirect:/";
+    }
+
+    @GetMapping("/probes")
+    public String probes(Model model) {
+        final List<ProbeDTO> allProbes = probeService.getAllProbes();
+        model.addAttribute("probes", allProbes);
+        return "probes";
+    }
+
+    @GetMapping("/addProbe")
+    public String addProbe(Model model) {
+        model.addAttribute("probeDTO", new ProbeDTO());
+        return "addProbe";
+    }
+
+    @PostMapping("/addProbe")
+    public String postAddProbe(Model model, ProbeDTO probeDTO) {
+        log.info("Dodatno nową głowicę USG: " + probeDTO);
+        probeService.addNewProbe(probeDTO);
         return "redirect:/";
     }
 }

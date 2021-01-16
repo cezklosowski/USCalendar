@@ -1,5 +1,6 @@
 package com.cezklosowski.entities;
 
+import com.cezklosowski.enums.ProbeType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,20 +11,19 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class UltrasoundMachineEntity {
-
+public class ProbeEntity {
     @Id
     @GeneratedValue
-    private Long ultrasoundMachineId;
+    private Long probeId;
 
     private String serialNumber;
     private String modelName;
     private String manufacturerName;
     private LocalDate productionDate;
-
-
-    // private List<ProbeEntity> probes;
-    // private List<Accessories> accessories;
-
-
+    private double minFrequency;
+    private double maxFrequency;
+    private int numberOfElements;
+    private ProbeType type;
+    @ElementCollection
+    private List<String> matchingUltrasoundMachines;
 }

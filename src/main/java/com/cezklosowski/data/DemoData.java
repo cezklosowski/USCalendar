@@ -1,8 +1,11 @@
 package com.cezklosowski.data;
 
 import com.cezklosowski.entities.LoanEntity;
+import com.cezklosowski.entities.ProbeEntity;
 import com.cezklosowski.entities.UltrasoundMachineEntity;
+import com.cezklosowski.enums.ProbeType;
 import com.cezklosowski.repositories.LoanRepository;
+import com.cezklosowski.repositories.ProbeRepository;
 import com.cezklosowski.repositories.UltrasoundMachineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -11,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Component
 public class DemoData {
@@ -20,6 +24,9 @@ public class DemoData {
 
     @Autowired
     private LoanRepository loanRepository;
+
+    @Autowired
+    private ProbeRepository probeRepository;
 
     @EventListener
     public void appReady(ApplicationReadyEvent event) {
@@ -116,6 +123,32 @@ public class DemoData {
         loanEntity3.setStartTime(LocalDateTime.of(2021,2,1,12,0));
         loanEntity3.setEndTime(LocalDateTime.of(2021,2,7,8,0));
         loanRepository.saveAndFlush(loanEntity3);
+
+        ProbeEntity probeEntity1 = new ProbeEntity();
+        ProbeEntity probeEntity2 = new ProbeEntity();
+
+        probeEntity1.setManufacturerName("Siemens Acuson");
+        probeEntity1.setModelName("11L4");
+        probeEntity1.setMinFrequency(3.6);
+        probeEntity1.setMaxFrequency(13.0);
+        probeEntity1.setNumberOfElements(128);
+        probeEntity1.setType(ProbeType.LINEAR);
+        probeEntity1.setSerialNumber("54L256P334");
+        probeEntity1.setProductionDate(LocalDate.of(2020,11,30));
+        probeEntity1.setMatchingUltrasoundMachines(List.of("NX3", "NX3 Elite", "Juniper Select", "Juniper"));
+        probeRepository.saveAndFlush(probeEntity1);
+
+        probeEntity2.setManufacturerName("Siemens Acuson");
+        probeEntity2.setModelName("5C1");
+        probeEntity2.setMinFrequency(1.4);
+        probeEntity2.setMaxFrequency(5.0);
+        probeEntity2.setNumberOfElements(128);
+        probeEntity2.setType(ProbeType.CONVEX);
+        probeEntity2.setSerialNumber("9234BN0114");
+        probeEntity2.setProductionDate(LocalDate.of(2021,1,2));
+        probeEntity2.setMatchingUltrasoundMachines(List.of("Juniper Select", "Juniper"));
+        probeRepository.saveAndFlush(probeEntity2);
+
 
     }
 }

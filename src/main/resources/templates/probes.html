@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>US Calendar</title>
+</head>
+<body>
+<h1>Głowice USG:</h1>
+<div th:each="probe : ${probes}">
+    <div>
+        <h3 th:text="${probe.modelName}"></h3>
+        <span>
+            Rodzaj: <b th:text="${probe.type}"></b> </br>
+        </span>
+        <span>
+            Częstotliwość dolna: <b th:text="${probe.minFrequency}"></b> </br>
+        </span>
+        <span>
+            Częstotliwość górna: <b th:text="${probe.maxFrequency}"></b> </br>
+        </span>
+        <span>
+            Liczba elementów: <b th:text="${probe.numberOfElements}"></b> </br>
+        </span>
+        <span>
+            Numer seryjny: <b th:text="${probe.serialNumber}"></b> </br>
+        </span>
+        <span>
+            Data produkcji: <b th:text="${probe.productionDate}"></b> </br>
+        </span>
+        <span>
+            Kompatybilne aparaty: <b th:text="${probe.matchingUltrasoundMachines}"></b> </br>
+        </span>
+
+    </div>
+</div>
+
+<div>
+    </br>
+    <a th:href="@{/}"> Powrót </a>
+</div>
+
+</body>
+</html>
