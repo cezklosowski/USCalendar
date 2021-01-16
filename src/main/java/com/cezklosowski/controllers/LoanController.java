@@ -1,5 +1,6 @@
 package com.cezklosowski.controllers;
 
+import com.cezklosowski.dtos.LoanDTO;
 import com.cezklosowski.entities.LoanEntity;
 import com.cezklosowski.services.LoanService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class LoanController {
     private final LoanService loanService;
 
     @GetMapping
-    public List<LoanEntity> getAll() {
+    public List<LoanDTO> getAll() {
         return loanService.getAllLoans();
     }
 }
