@@ -103,14 +103,14 @@ public class DemoData {
         loanEntity1.setEndTime(LocalDate.of(2021,1,24));
         loanRepository.saveAndFlush(loanEntity1);
 
-        loanEntity2.getUltrasoundMachines().add(ultrasoundMachineEntity2);
+        loanEntity2.getUltrasoundMachines().add(ultrasoundMachineEntity3);
         loanEntity2.setPlaceName("Eskulap Warszawa");
         loanEntity2.setStartTime(LocalDate.of(2021,1,20));
         loanEntity2.setEndTime(LocalDate.of(2021,1,26));
         loanRepository.saveAndFlush(loanEntity2);
 
-        loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity3);
-        loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity4);
+        loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity5);
+        loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity9);
         loanEntity3.setPlaceName("LuxMed Kraków");
         loanEntity3.setStartTime(LocalDate.of(2021,2,3));
         loanEntity3.setEndTime(LocalDate.of(2021,2,9));

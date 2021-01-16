@@ -17,7 +17,6 @@ public class HelloService {
 
     public String fetchHelloMessage() {
 
-
         return "Witaj! Wszystko działa. Odświeżono  " + (++licznik) + " razy.";
     }
 }

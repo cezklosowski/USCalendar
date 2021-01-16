@@ -11,7 +11,7 @@ public class HelloWorldController {
 
     private final HelloService helloService;
 
-    @GetMapping("/hello")
+    @GetMapping(value = "/hello", produces = "text/plain")
     public String hello() {
         return helloService.fetchHelloMessage();
     }
