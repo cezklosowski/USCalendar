@@ -10,7 +10,7 @@
     <div>
         <h3 th:text="${probe.modelName}"></h3>
         <span>
-            Rodzaj: <b th:text="${probe.type}"></b> </br>
+            Rodzaj: <b th:text="${probe.type.displayName}"></b> </br>
         </span>
         <span>
             Częstotliwość dolna: <b th:text="${probe.minFrequency}"></b> </br>

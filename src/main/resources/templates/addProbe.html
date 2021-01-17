@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>US Calendar</title>
+</head>
+<body>
+<h1>Dodaj nowy aparat USG:</h1>
+
+<form method="post" th:action="@{/addProbe}" th:object="${probeDTO}">
+    <div>
+        <label for="manufacturerNameInput">Producent:</label>
+        <input id="manufacturerNameInput" type="text" th:field="*{manufacturerName}">
+    </div>
+    <div>
+        <label for="modelNameInput">Model:</label>
+        <input id="modelNameInput" type="text" th:field="*{modelName}">
+    </div>
+    <div>
+        <label for="typeInput">Model:</label>
+        <select id="typeInput">
+            <option th:each="type : ${T(com.cezklosowski.enums.ProbeType).values()}"
+                    th:value="${type}"
+                    th:text="${type.displayName}">
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="minFrequencyInput">Częstotliwość dolna:</label>
+        <input id="minFrequencyInput" type="number" th:field="*{minFrequency}">
+    </div>
+    <div>
+        <label for="maxFrequencyInput">Częstotliwość górna:</label>
+        <input id="maxFrequencyInput" type="number" th:field="*{maxFrequency}">
+    </div>
+    <div>
+        <label for="numberOfElementsInput">Liczba elementów:</label>
+        <input id="numberOfElementsInput" type="number" th:field="*{numberOfElements}">
+    </div>
+    <div>
+        <label for="serialNumberInput">Numer seryjny:</label>
+        <input id="serialNumberInput" type="text" th:field="*{serialNumber}">
+    </div>
+    <div>
+        <label for="productionDateInput">Data produkcji:</label>
+        <input id="productionDateInput" type="date" th:field="*{productionDate}">
+    </div>
+
+
+    <div>
+        <button type="submit">Dodaj!</button>
+    </div>
+</form>
+</body>
+</html>
