@@ -23,6 +23,9 @@ public class LoanEntity {
     @OneToOne
     private UltrasoundMachineEntity ultrasoundMachine;
 
+    @ManyToMany
+    private Set<ProbeEntity> probes = new HashSet<>();
+
     private String placeName;
     private LocalDate startTime;
     private LocalDate endTime;

@@ -17,9 +17,15 @@
             <br/>
         </div>
         <div>
-        <span>Aparat:
-            <b th:text="${loan.ultrasoundMachine.modelName}"></b>
-        </span>
+        <div>Aparat:
+            <b th:text="${loan.ultrasoundMachine.modelName} + ' SN: ' + ${loan.ultrasoundMachine.serialNumber}"></b>
+        </div>
+            <div>Głowice:
+                </br>
+                <span th:each="probe : ${loan.probes}">
+                    <li th:text="${probe.modelName} + ' SN: ' + ${probe.serialNumber}"></li>
+                </span>
+            </div>
         </div>
     </div>
 </div>

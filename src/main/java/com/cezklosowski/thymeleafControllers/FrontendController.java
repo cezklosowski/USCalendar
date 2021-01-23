@@ -47,6 +47,7 @@ public class FrontendController {
     public String addLoan(Model model) {
         model.addAttribute("loanDTO", new LoanDTO());
         model.addAttribute("ultrasoundMachines", ultrasoundMachinesService.getAllUltrasoundMachines());
+        model.addAttribute("probes", probeService.getAllProbes());
         return "addLoan";
     }
 

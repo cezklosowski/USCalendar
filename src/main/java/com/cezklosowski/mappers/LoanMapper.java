@@ -13,6 +13,7 @@ public class LoanMapper {
         dto.setStartTime(entity.getStartTime());
         dto.setEndTime(entity.getEndTime());
         dto.setUltrasoundMachine(entity.getUltrasoundMachine());
+        dto.setProbes(entity.getProbes());
 
         return dto;
     }
@@ -25,6 +26,7 @@ public class LoanMapper {
         entity.setStartTime(dto.getStartTime());
         entity.setEndTime(dto.getEndTime());
         entity.setUltrasoundMachine(dto.getUltrasoundMachine());
+        entity.setProbes(dto.getProbes());
 
         return entity;
     }

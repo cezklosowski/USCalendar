@@ -1,9 +1,11 @@
 package com.cezklosowski.dtos;
 
+import com.cezklosowski.entities.ProbeEntity;
 import com.cezklosowski.entities.UltrasoundMachineEntity;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.OneToOne;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -20,4 +22,5 @@ public class LoanDTO {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate endTime;
     private UltrasoundMachineEntity ultrasoundMachine;
+    private Set<ProbeEntity> probes = new HashSet<>();
 }

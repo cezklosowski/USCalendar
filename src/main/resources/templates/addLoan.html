@@ -22,12 +22,21 @@
         <input id="endTimeInput" type="date" th:field="*{endTime}">
     </div>
     <div>
-        <label for="typeInput">Aparat:</label>
-        <select id="typeInput" th:field="*{ultrasoundMachine.ultrasoundMachineId}">
+        <label for="ultrasoundMachineInput">Aparat:</label>
+        <select th:name="selectedUS" id="ultrasoundMachineInput" th:field="*{ultrasoundMachine.ultrasoundMachineId}">
             <option th:each="ultrasoundMachine : ${ultrasoundMachines}"
                     th:value="${ultrasoundMachine.ultrasoundMachineId}"
-                    th:text="${ultrasoundMachine.modelName} + ' SN: ' + ${ultrasoundMachine.serialNumber}">
+                    th:text="${ultrasoundMachine.modelName} + ' SN: ' + ${ultrasoundMachine.serialNumber}"
+            >
             </option>
+        </select>
+        </br>
+        <label for="probeInput">Głowice:</label>
+        <select id="probeInput" th:field="*{probes}" multiple>
+            <option type="checkbox" th:each="probe : ${probes}"
+                    th:value="${probe.probeId}"
+                    th:text="${probe.modelName} + ' SN: ' + ${probe.serialNumber}"
+            />
         </select>
     </div>
 

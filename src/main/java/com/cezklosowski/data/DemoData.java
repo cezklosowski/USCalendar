@@ -101,27 +101,7 @@ public class DemoData {
         ultrasoundMachineEntity10.setProductionDate(LocalDate.of(2020,12,23));
         ultrasoundMachineRepository.saveAndFlush(ultrasoundMachineEntity10);
 
-        LoanEntity loanEntity1 = new LoanEntity();
-        LoanEntity loanEntity2 = new LoanEntity();
-        LoanEntity loanEntity3 = new LoanEntity();
 
-        loanEntity1.setUltrasoundMachine(ultrasoundMachineEntity1);
-        loanEntity1.setPlaceName("EnelMed Gdańsk");
-        loanEntity1.setStartTime(LocalDate.of(2021,1,19));
-        loanEntity1.setEndTime(LocalDate.of(2021,1,24));
-        loanRepository.saveAndFlush(loanEntity1);
-
-        loanEntity2.setUltrasoundMachine(ultrasoundMachineEntity3);
-        loanEntity2.setPlaceName("Eskulap Warszawa");
-        loanEntity2.setStartTime(LocalDate.of(2021,1,21));
-        loanEntity2.setEndTime(LocalDate.of(2021,1,28));
-        loanRepository.saveAndFlush(loanEntity2);
-
-        loanEntity3.setUltrasoundMachine(ultrasoundMachineEntity9);
-        loanEntity3.setPlaceName("LuxMed Kraków");
-        loanEntity3.setStartTime(LocalDate.of(2021,2,1));
-        loanEntity3.setEndTime(LocalDate.of(2021,2,7));
-        loanRepository.saveAndFlush(loanEntity3);
 
         ProbeEntity probeEntity1 = new ProbeEntity();
         ProbeEntity probeEntity2 = new ProbeEntity();
@@ -147,6 +127,31 @@ public class DemoData {
         probeEntity2.setProductionDate(LocalDate.of(2021,1,2));
         probeEntity2.setMatchingUltrasoundMachines(List.of("Juniper Select", "Juniper"));
         probeRepository.saveAndFlush(probeEntity2);
+
+        LoanEntity loanEntity1 = new LoanEntity();
+        LoanEntity loanEntity2 = new LoanEntity();
+        LoanEntity loanEntity3 = new LoanEntity();
+
+        loanEntity1.setUltrasoundMachine(ultrasoundMachineEntity1);
+        loanEntity1.getProbes().add(probeEntity1);
+        loanEntity1.getProbes().add(probeEntity2);
+        loanEntity1.setPlaceName("EnelMed Gdańsk");
+        loanEntity1.setStartTime(LocalDate.of(2021,1,19));
+        loanEntity1.setEndTime(LocalDate.of(2021,1,24));
+        loanRepository.saveAndFlush(loanEntity1);
+
+        loanEntity2.setUltrasoundMachine(ultrasoundMachineEntity3);
+        loanEntity2.getProbes().add(probeEntity1);
+        loanEntity2.setPlaceName("Eskulap Warszawa");
+        loanEntity2.setStartTime(LocalDate.of(2021,1,21));
+        loanEntity2.setEndTime(LocalDate.of(2021,1,28));
+        loanRepository.saveAndFlush(loanEntity2);
+
+        loanEntity3.setUltrasoundMachine(ultrasoundMachineEntity9);
+        loanEntity3.setPlaceName("LuxMed Kraków");
+        loanEntity3.setStartTime(LocalDate.of(2021,2,1));
+        loanEntity3.setEndTime(LocalDate.of(2021,2,7));
+        loanRepository.saveAndFlush(loanEntity3);
 
 
     }
