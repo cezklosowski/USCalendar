@@ -105,20 +105,19 @@ public class DemoData {
         LoanEntity loanEntity2 = new LoanEntity();
         LoanEntity loanEntity3 = new LoanEntity();
 
-        loanEntity1.getUltrasoundMachines().add(ultrasoundMachineEntity1);
+        loanEntity1.setUltrasoundMachine(ultrasoundMachineEntity1);
         loanEntity1.setPlaceName("EnelMed Gdańsk");
         loanEntity1.setStartTime(LocalDate.of(2021,1,19));
         loanEntity1.setEndTime(LocalDate.of(2021,1,24));
         loanRepository.saveAndFlush(loanEntity1);
 
-        loanEntity2.getUltrasoundMachines().add(ultrasoundMachineEntity3);
+        loanEntity2.setUltrasoundMachine(ultrasoundMachineEntity3);
         loanEntity2.setPlaceName("Eskulap Warszawa");
         loanEntity2.setStartTime(LocalDate.of(2021,1,21));
         loanEntity2.setEndTime(LocalDate.of(2021,1,28));
         loanRepository.saveAndFlush(loanEntity2);
 
-        loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity5);
-        loanEntity3.getUltrasoundMachines().add(ultrasoundMachineEntity9);
+        loanEntity3.setUltrasoundMachine(ultrasoundMachineEntity9);
         loanEntity3.setPlaceName("LuxMed Kraków");
         loanEntity3.setStartTime(LocalDate.of(2021,2,1));
         loanEntity3.setEndTime(LocalDate.of(2021,2,7));

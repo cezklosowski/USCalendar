@@ -46,6 +46,7 @@ public class FrontendController {
     @GetMapping("/addLoan")
     public String addLoan(Model model) {
         model.addAttribute("loanDTO", new LoanDTO());
+        model.addAttribute("ultrasoundMachines", ultrasoundMachinesService.getAllUltrasoundMachines());
         return "addLoan";
     }
 

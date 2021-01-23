@@ -19,5 +19,5 @@ public class LoanDTO {
     private LocalDate startTime;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate endTime;
-    private Set<UltrasoundMachineEntity> ultrasoundMachines = new HashSet<>();
+    private UltrasoundMachineEntity ultrasoundMachine;
 }

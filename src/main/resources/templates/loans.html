@@ -18,10 +18,7 @@
         </div>
         <div>
         <span>Aparat:
-            <div th:each="ultrasoundMachine : ${loan.ultrasoundMachines}">
-                <span th:text="${ultrasoundMachine.manufacturerName}"></span>
-                <b th:text="${ultrasoundMachine.modelName}"></b>
-            </div>
+            <b th:text="${loan.ultrasoundMachine.modelName}"></b>
         </span>
         </div>
     </div>

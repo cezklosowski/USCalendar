@@ -12,7 +12,7 @@ public class LoanMapper {
         dto.setPlaceName(entity.getPlaceName());
         dto.setStartTime(entity.getStartTime());
         dto.setEndTime(entity.getEndTime());
-        dto.setUltrasoundMachines(entity.getUltrasoundMachines());
+        dto.setUltrasoundMachine(entity.getUltrasoundMachine());
 
         return dto;
     }
@@ -24,7 +24,7 @@ public class LoanMapper {
         entity.setPlaceName(dto.getPlaceName());
         entity.setStartTime(dto.getStartTime());
         entity.setEndTime(dto.getEndTime());
-        entity.setUltrasoundMachines(dto.getUltrasoundMachines());
+        entity.setUltrasoundMachine(dto.getUltrasoundMachine());
 
         return entity;
     }

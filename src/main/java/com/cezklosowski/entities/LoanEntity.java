@@ -20,10 +20,8 @@ public class LoanEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long loanId;
 
-    @OneToMany(
-           // mappedBy = "loanEntity"
-    )
-    private Set<UltrasoundMachineEntity> ultrasoundMachines = new HashSet<>();
+    @OneToOne
+    private UltrasoundMachineEntity ultrasoundMachine;
 
     private String placeName;
     private LocalDate startTime;

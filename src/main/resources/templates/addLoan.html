@@ -21,6 +21,15 @@
         <label for="endTimeInput">Do:</label>
         <input id="endTimeInput" type="date" th:field="*{endTime}">
     </div>
+    <div>
+        <label for="typeInput">Aparat:</label>
+        <select id="typeInput" th:field="*{ultrasoundMachine.ultrasoundMachineId}">
+            <option th:each="ultrasoundMachine : ${ultrasoundMachines}"
+                    th:value="${ultrasoundMachine.ultrasoundMachineId}"
+                    th:text="${ultrasoundMachine.modelName}">
+            </option>
+        </select>
+    </div>
 
     <div>
         <button type="submit">Dodaj!</button>
