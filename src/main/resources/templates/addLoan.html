@@ -26,7 +26,7 @@
         <select id="typeInput" th:field="*{ultrasoundMachine.ultrasoundMachineId}">
             <option th:each="ultrasoundMachine : ${ultrasoundMachines}"
                     th:value="${ultrasoundMachine.ultrasoundMachineId}"
-                    th:text="${ultrasoundMachine.modelName}">
+                    th:text="${ultrasoundMachine.modelName} + ' SN: ' + ${ultrasoundMachine.serialNumber}">
             </option>
         </select>
     </div>
