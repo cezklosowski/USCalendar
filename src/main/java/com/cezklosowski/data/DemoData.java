@@ -105,6 +105,9 @@ public class DemoData {
 
         ProbeEntity probeEntity1 = new ProbeEntity();
         ProbeEntity probeEntity2 = new ProbeEntity();
+        ProbeEntity probeEntity3 = new ProbeEntity();
+        ProbeEntity probeEntity4 = new ProbeEntity();
+        ProbeEntity probeEntity5 = new ProbeEntity();
 
         probeEntity1.setManufacturerName("Siemens Acuson");
         probeEntity1.setModelName("11L4");
@@ -128,6 +131,39 @@ public class DemoData {
         probeEntity2.setMatchingUltrasoundMachines(List.of("Juniper Select", "Juniper"));
         probeRepository.saveAndFlush(probeEntity2);
 
+        probeEntity3.setManufacturerName("Siemens Acuson");
+        probeEntity3.setModelName("9C3");
+        probeEntity3.setMinFrequency(2.2);
+        probeEntity3.setMaxFrequency(9.2);
+        probeEntity3.setNumberOfElements(384);
+        probeEntity3.setType(ProbeType.CONVEX);
+        probeEntity3.setSerialNumber("03344N0214");
+        probeEntity3.setProductionDate(LocalDate.of(2021,1,1));
+        probeEntity3.setMatchingUltrasoundMachines(List.of("Sequoia"));
+        probeRepository.saveAndFlush(probeEntity3);
+
+        probeEntity4.setManufacturerName("Siemens Acuson");
+        probeEntity4.setModelName("9EC4");
+        probeEntity4.setMinFrequency(2.9);
+        probeEntity4.setMaxFrequency(8.1);
+        probeEntity4.setNumberOfElements(192);
+        probeEntity4.setType(ProbeType.ENDOCAVITARY);
+        probeEntity4.setSerialNumber("81524G3214");
+        probeEntity4.setProductionDate(LocalDate.of(2020,5,6));
+        probeEntity4.setMatchingUltrasoundMachines(List.of("Sequoia"));
+        probeRepository.saveAndFlush(probeEntity4);
+
+        probeEntity5.setManufacturerName("Siemens Acuson");
+        probeEntity5.setModelName("5P1");
+        probeEntity5.setMinFrequency(1.1);
+        probeEntity5.setMaxFrequency(4.8);
+        probeEntity5.setNumberOfElements(90);
+        probeEntity5.setType(ProbeType.PHASED_ARRAY);
+        probeEntity5.setSerialNumber("38588G3214");
+        probeEntity5.setProductionDate(LocalDate.of(2019,9,26));
+        probeEntity5.setMatchingUltrasoundMachines(List.of("Juniper Select", "Juniper"));
+        probeRepository.saveAndFlush(probeEntity5);
+
         LoanEntity loanEntity1 = new LoanEntity();
         LoanEntity loanEntity2 = new LoanEntity();
         LoanEntity loanEntity3 = new LoanEntity();
@@ -147,7 +183,9 @@ public class DemoData {
         loanEntity2.setEndTime(LocalDate.of(2021,1,28));
         loanRepository.saveAndFlush(loanEntity2);
 
-        loanEntity3.setUltrasoundMachine(ultrasoundMachineEntity9);
+        loanEntity3.setUltrasoundMachine(ultrasoundMachineEntity10);
+        loanEntity3.getProbes().add(probeEntity3);
+        loanEntity3.getProbes().add(probeEntity4);
         loanEntity3.setPlaceName("LuxMed Kraków");
         loanEntity3.setStartTime(LocalDate.of(2021,2,1));
         loanEntity3.setEndTime(LocalDate.of(2021,2,7));
