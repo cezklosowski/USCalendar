@@ -26,7 +26,7 @@ public class LoanEntity {
     private Set<UltrasoundMachineEntity> ultrasoundMachines = new HashSet<>();
 
     private String placeName;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private LocalDate startTime;
+    private LocalDate endTime;
 
 }

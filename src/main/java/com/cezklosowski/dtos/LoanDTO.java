@@ -15,7 +15,9 @@ public class LoanDTO {
 
     private long loanId;
     private String placeName;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate startTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate endTime;
     private Set<UltrasoundMachineEntity> ultrasoundMachines = new HashSet<>();
 }

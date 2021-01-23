@@ -1,6 +1,7 @@
 package com.cezklosowski.dtos;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -11,5 +12,6 @@ public class UltrasoundMachineDTO {
     private String serialNumber;
     private String modelName;
     private String manufacturerName;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate productionDate;
 }

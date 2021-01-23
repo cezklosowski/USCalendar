@@ -17,8 +17,8 @@
         <input id="modelNameInput" type="text" th:field="*{modelName}">
     </div>
     <div>
-        <label for="typeInput">Model:</label>
-        <select id="typeInput">
+        <label for="typeInput">Typ:</label>
+        <select id="typeInput" th:field="*{type}">
             <option th:each="type : ${T(com.cezklosowski.enums.ProbeType).values()}"
                     th:value="${type}"
                     th:text="${type.displayName}">
@@ -27,11 +27,11 @@
     </div>
     <div>
         <label for="minFrequencyInput">Częstotliwość dolna:</label>
-        <input id="minFrequencyInput" type="number" th:field="*{minFrequency}">
+        <input id="minFrequencyInput" type="number" step="0.1" th:field="*{minFrequency}">
     </div>
     <div>
         <label for="maxFrequencyInput">Częstotliwość górna:</label>
-        <input id="maxFrequencyInput" type="number" th:field="*{maxFrequency}">
+        <input id="maxFrequencyInput" type="number" step="0.1" th:field="*{maxFrequency}">
     </div>
     <div>
         <label for="numberOfElementsInput">Liczba elementów:</label>
